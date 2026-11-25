@@ -2,7 +2,7 @@
 *Selector del dom
 */
 const datos= document.querySelector("#datos");
-const selectLibros=document.querySelector("#selectorLibros");
+const selectLibros=document.querySelector("#sellibros");
 
 /*
 *Array
@@ -93,4 +93,10 @@ for(libro of libros){
     </table>
     `;
 
+    /*
+    *selector
+    */
+   for(let selecctor in libro){
+    selectLibros.innerHTML+=
+   }
 
