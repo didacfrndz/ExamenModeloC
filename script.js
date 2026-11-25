@@ -1,9 +1,11 @@
-/*Selector del dom*/
+/*
+*Selector del dom
+*/
 const datos= document.querySelector("#datos");
 const selectLibros=document.querySelector("#selectorLibros");
 
 /*
-Array
+*Array
 */
 const libros =[
     {
@@ -36,4 +38,59 @@ const libros =[
         genero:"Ficción",
         publicacion:"1960"
     }
-]
+];
+
+/* 
+!Visibilidad de los libros
+   <table>
+         <thead>Libros Disponibles</thead>
+            <tr>
+               <th>Titulo</th>
+               <th>Autor</th>
+               <th>Genero</th>
+               <th>Año</th>
+            </tr>
+            <tr>
+                <td>Titulo1</td>
+                <td>Autor1</td>
+                <td>Genero1</td>
+                <td>año1</td>
+            </tr>
+            
+        </table>     
+        
+
+*/
+datos.innerHTML= `
+<table>
+         <thead>Libros Disponibles</thead>
+            <tr>
+               <th>Titulo</th>
+               <th>Autor</th>
+               <th>Genero</th>
+               <th>Año</th>
+            </tr>
+            
+            `;
+let propiedades ="<tr><td>";
+for(libro of libros){
+    
+    for(propiedad in libro){
+        
+        if(propiedad != ""){            
+            propiedades+=
+            `
+            ${libro[propiedad]}  
+            `;            
+        }
+        propiedades+="</td>"
+    }
+    propiedades+="</tr>"
+   
+}
+ datos.innerHTML+=`
+    ${propiedades}
+    </table>
+    `;
+
+
